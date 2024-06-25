@@ -2,10 +2,10 @@
 *segundo trabalho da disciplina Eletronica para Computação (SSC0180)*
 
 # Sobre o projeto
-Nesse segundo trabalho, buscamos construir um piano/teclado com base no uso do arduino. 
+Nesse segundo trabalho, buscamos construir um piano/teclado feito de teclas de alumínio e que usa touch capacitivo com base no arduino. 
 
 # Funcionamento
-Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, printa a letra correspondente à nota em um simulador de piano virtual. Por exemplo, ao pressionar a primeira tecla de alumínio, a ddp presente é transmitida pelo fio que entra na primeira entrada digital do arduíno, que, por sua vez, verifica isso e printa a tecla "u" no computador, correspondente à nota dó no simulador de piano. O piano possui 12 teclas no total (uma oitva inteira, contando semitons; no simulador, emitem as notas de C4 à B4) e, logicamente, utiliza 12 entradas digitais do arduíno, do número 2 ao 13. Para criar a diferença de potencial, usamos a saída de 5V do arduíno para tocar nas teclas.
+Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, printa a letra correspondente à nota em um simulador de piano virtual. Por exemplo, ao pressionar a primeira tecla de alumínio, a ddp presente é transmitida pelo fio que entra na primeira entrada digital (no caso, a primeira seria a entrada 2) do arduíno, que, por sua vez, verifica isso e printa a tecla "u" no computador, correspondente à nota dó no simulador de piano. O piano possui 12 teclas no total (uma oitva inteira, contando semitons; no simulador, emitem as notas de C4 à B4) e, logicamente, utiliza 12 entradas digitais do arduíno, do número 2 ao 13. Para criar a diferença de potencial, usamos a saída de 5V do arduíno para tocar nas teclas.
 
 # Foto e código
 ![Captura de tela 2024-06-25 104047](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/9ba09f37-bd50-4f34-9dec-89564d545b86)
