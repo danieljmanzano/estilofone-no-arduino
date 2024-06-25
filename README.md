@@ -17,9 +17,10 @@ Para o projeto, usamos unicamente jumpers e o arduíno (emprestado pelo professo
 *aqui entra um vídeo*
 
 ```
-//-----Código do Projeto--------
+//-----Código do Projeto-------
+#include <Keyboard.h>
 // Definição dos pinos dos sensores de toque
-const int touchPins[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+const int touchPins[] = {52, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; //detalhe: usamos o primeiro pin como 52 por razão de os pins 1 e 13 dos digitais não funcionarem bem
 // Definição dos pinos das notas musicais correspondentes 
 const char teclas[] = {'u', '8', 'i', '9', 'o', 'p', 'a', 'z', 's', 'x', 'd', 'c'};
 // As letras nesse vetor são as notas corespondentes em um simulador de piano online que vamos usar
@@ -29,7 +30,6 @@ void setup() {
   for (int i = 0; i < 12; i++) {
     pinMode(touchPins[i], INPUT);
   }
-  Serial.begin(115200);
 }
 
 void loop() {
@@ -37,7 +37,9 @@ void loop() {
     // Verificação se o sensor de toque foi ativado
     if (digitalRead(touchPins[i]) == HIGH) {
       // Tocar a nota correspondente
-      Serial.print(teclas[i]);
+      Keyboard.press(teclas[i]);
+    } else {
+      Keyboard.release(teclas[i]);
     }
   }
 }
