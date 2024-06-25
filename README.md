@@ -35,4 +35,9 @@ void loop() {
   }
 }
 ```
+# Integrantes
+- Daniel Jorge Manzano - 154468661
+- Matheus Muzza Pires Ferreira - 15479468
+- Rodrigo Silva de Almeida - 15645380
+- Vinicius Morotti - 15491876
 
