@@ -9,7 +9,7 @@ Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes
 
 # Foto e código
 ![Captura de tela 2024-06-25 104047](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/9ba09f37-bd50-4f34-9dec-89564d545b86)
-*observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse*
+*observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a tecla pressionada seria a primeira*
 ```
 // Definição dos pinos dos sensores de toque
 const int touchPins[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
