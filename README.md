@@ -10,7 +10,7 @@ Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes
 # Componentes
 Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita para prender os fios.
 
-# Registros e código
+# Fotos e vídeo
 ![Captura de tela 2024-06-27 175931](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/79e49f3c-95bb-4f1a-88e5-8c035ae55d0d)
 
 *observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a tecla pressionada seria a primeira*
@@ -21,6 +21,7 @@ Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pe
 
 *aqui entra um vídeo*
 
+# Código
 ```
 // ------ Código do projeto ------
 // Definição dos pinos dos sensores de toque
@@ -63,6 +64,7 @@ bool noTouchDetected() {
   return true;
 }
 ```
+
 # Integrantes
 - Daniel Jorge Manzano - 154468661
 - Matheus Muzza Pires Ferreira - 15479468
