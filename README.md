@@ -8,7 +8,7 @@ Nesse segundo trabalho, buscamos construir um piano/teclado feito de teclas de a
 Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, toca o buzzer associado ao circuito com a frequência específica da nota pressionada.
 
 # Componentes
-Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
+Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita para prender os fios.
 
 # Registros e código
 ![Captura de tela 2024-06-27 175931](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/79e49f3c-95bb-4f1a-88e5-8c035ae55d0d)
