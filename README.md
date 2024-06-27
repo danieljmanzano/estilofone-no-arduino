@@ -5,31 +5,35 @@
 Nesse segundo trabalho, buscamos construir um piano/teclado feito de teclas de alumínio e que usa touch capacitivo com base no arduino. 
 
 # Funcionamento
-Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, printa a letra correspondente à nota em um simulador de piano virtual. Por exemplo, ao pressionar a primeira tecla de alumínio, a ddp presente é transmitida pelo fio que entra na primeira entrada digital (no caso, a primeira seria a entrada 2) do arduíno, que, por sua vez, verifica isso e printa a tecla "u" no computador, correspondente à nota dó no simulador de piano. O piano possui 12 teclas no total (uma oitva inteira, contando semitons; no simulador, emitem as notas de C4 à B4) e, logicamente, utiliza 12 entradas digitais do arduíno, do número 2 ao 13. Para criar a diferença de potencial, usamos a saída de 5V do arduíno para tocar nas teclas.
+Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, toca o buzzer associado ao circuito com a frequência específica da nota pressionada.
 
 # Componentes
-Para o projeto, usamos unicamente jumpers e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
+Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
 
 # Registros e código
-![Captura de tela 2024-06-25 104047](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/9ba09f37-bd50-4f34-9dec-89564d545b86)
+![Captura de tela 2024-06-27 175931](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/79e49f3c-95bb-4f1a-88e5-8c035ae55d0d)
+
 *observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a tecla pressionada seria a primeira*
 
 *aqui entra um vídeo*
 
 ```
-//-----Código do Projeto-------
-#include <Keyboard.h>
+// ------ Código do projeto ------
 // Definição dos pinos dos sensores de toque
-const int touchPins[] = {52, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; //detalhe: usamos o primeiro pin como 52 por razão de os pins 1 e 13 dos digitais não funcionarem bem
-// Definição dos pinos das notas musicais correspondentes 
-const char teclas[] = {'u', '8', 'i', '9', 'o', 'p', 'a', 'z', 's', 'x', 'd', 'c'};
-// As letras nesse vetor são as notas corespondentes em um simulador de piano online que vamos usar
+const int touchPins[] = {52, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; // Obs.: o primeiro pino sendo o 52 se deve ao fato de os pinos 1 e 13 do arduíno não estarem em bom funcionamento
+// Definição dos pinos das notas musicais correspondentes
+const int notes[] = {264, 278, 294, 312, 330, 350, 370, 392, 416, 440, 467, 494}; // Toca uma oitava inteira (dó a sí), incluindo semitons
+
+// Pino do buzzer
+const int buzzerPin = A0;
 
 void setup() {
   // Configuração dos pinos dos sensores como entrada
   for (int i = 0; i < 12; i++) {
     pinMode(touchPins[i], INPUT);
   }
+  // Configuração do pino do buzzer como saída
+  pinMode(buzzerPin, OUTPUT);
 }
 
 void loop() {
@@ -37,11 +41,22 @@ void loop() {
     // Verificação se o sensor de toque foi ativado
     if (digitalRead(touchPins[i]) == HIGH) {
       // Tocar a nota correspondente
-      Keyboard.press(teclas[i]);
-    } else {
-      Keyboard.release(teclas[i]);
+      tone(buzzerPin, notes[i]);
     }
   }
+  // Parar o som se nenhum sensor estiver sendo tocado
+  if (noTouchDetected()) {
+    noTone(buzzerPin);
+  }
+}
+
+bool noTouchDetected() {
+  for (int i = 0; i < 12; i++) {
+    if (digitalRead(touchPins[i]) == HIGH) {
+      return false;
+    }
+  }
+  return true;
 }
 ```
 # Integrantes
