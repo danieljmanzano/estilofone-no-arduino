@@ -12,8 +12,9 @@ Para o projeto, usamos unicamente jumpers, um buzzer e o arduíno (emprestado pe
 
 # Fotos e vídeo
 ![Captura de tela 2024-06-27 175931](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/79e49f3c-95bb-4f1a-88e5-8c035ae55d0d)
-
 *observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a tecla pressionada seria a primeira*
+
+
 
 ![Imagem do WhatsApp de 2024-06-27 à(s) 20 25 00_5c0ad89b](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/ed651c1c-afe5-4f5d-9e77-4727a611615d)
 *foto do projeto final*
