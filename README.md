@@ -72,6 +72,10 @@ except KeyboardInterrupt:
 finally:
     ser.close()
 ```
+
+# Agradecimentos
+Agradecemos ao professor Simões pelo auxílio que nos ofereceu ao dar ideias e soluções para problemas que enfrentamos no desenvolvimento do projeto, tornando o resultado final o melhor possível. Além disso, também agradecemos ao colega Fernando Valentim Torres pela ajuda que ofereceu no funcionamento, fazendo funcionar a transmissão de dados do arduino ao computador com o segundo código.
+
 # Integrantes
 - Daniel Jorge Manzano - 154468661
 - Matheus Muzza Pires Ferreira - 15479468
