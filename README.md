@@ -8,7 +8,7 @@ Nesse segundo trabalho, buscamos construir um piano/teclado feito de teclas de a
 Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, printa a letra correspondente à nota em um simulador de piano virtual; além disso, usamos resistores associados aos fios na tentativa de reduzir a quantidade de ruído criado na análise da tensão. Por exemplo, ao pressionar a primeira tecla de alumínio, a ddp presente é transmitida pelo fio que entra na primeira entrada digital (no caso, a primeira seria a entrada 2) do arduíno, que, por sua vez, verifica isso e printa a tecla "u" no computador, correspondente à nota dó no simulador de piano. O piano possui 12 teclas no total (uma oitva inteira, contando semitons; no simulador, emitem as notas de C4 à B4) e, logicamente, utiliza 12 entradas digitais do arduíno. Para criar a diferença de potencial, usamos a saída de 5V do arduíno para tocar nas teclas (uma mão segura o fio, a outra toca no piano).
 
 # Componentes
-Para o projeto, usamos unicamente jumpers, resistores de 3k ohm e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
+Para o projeto, usamos unicamente jumpers, uma protoboard, resistores de 3k ohm e um arduíno mega. Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios. Resumidamente, os gastos foram de aproximadamente R$20,00, tendo sido possível reutilizar grande parte dos componentes e usar o arduino emprestado (obrigado professor!).
 
 # Fotos e vídeo
 ![Captura de tela 2024-06-28 152427](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/b48b6213-b2db-4bb4-8922-e110c85e97d9)
@@ -74,7 +74,7 @@ finally:
 ```
 
 # Agradecimentos
-Agradecemos ao professor Simões pelo auxílio que nos ofereceu ao dar ideias e soluções para problemas que enfrentamos no desenvolvimento do projeto, tornando o resultado final o melhor possível. Além disso, também agradecemos ao colega Fernando Valentim Torres pela ajuda que nos ofertou, fazendo funcionar a transmissão de dados do arduino ao computador com o segundo código e apoiando o grupo.
+Agradecemos ao professor Simões pelo auxílio que nos ofereceu ao dar ideias e soluções para problemas que enfrentamos no desenvolvimento do projeto, tornando o resultado final o melhor possível, e também pelo arduino. Além disso, também agradecemos ao colega Fernando Valentim Torres pela ajuda que nos ofertou, fazendo funcionar a transmissão de dados do arduino ao computador com o segundo código e apoiando o grupo.
 
 # Integrantes
 - Daniel Jorge Manzano - 154468661
