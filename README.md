@@ -49,7 +49,7 @@ void loop() {
   }
 }
 ```
-- Programa que recebe os dados do arduino e simula as teclas do computador
+- Programa que recebe os dados do arduino e simula as teclas do computador (feito em Python)
 ```
 import serial
 import keyboard
