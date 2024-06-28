@@ -8,7 +8,7 @@ Nesse segundo trabalho, buscamos construir um piano/teclado feito de teclas de a
 Para o funcionamento do projeto, usamos teclas feitas de papel alumínio capazes de transmitir tensão quando pressionadas diretamente para o arduíno, este que, "percebendo" a ddp vinda da respectiva tecla, printa a letra correspondente à nota em um simulador de piano virtual. Por exemplo, ao pressionar a primeira tecla de alumínio, a ddp presente é transmitida pelo fio que entra na primeira entrada digital (no caso, a primeira seria a entrada 2) do arduíno, que, por sua vez, verifica isso e printa a tecla "u" no computador, correspondente à nota dó no simulador de piano. O piano possui 12 teclas no total (uma oitva inteira, contando semitons; no simulador, emitem as notas de C4 à B4) e, logicamente, utiliza 12 entradas digitais do arduíno, do número 2 ao 13. Para criar a diferença de potencial, usamos a saída de 5V do arduíno para tocar nas teclas.
 
 # Componentes
-Para o projeto, usamos unicamente jumpers e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
+Para o projeto, usamos unicamente jumpers, resistores de 3k ohm e o arduíno (emprestado pelo professor). Como "extra", confeccionamos a superfície do teclado manualmente usando uma folha de alumínio e um pedaço de papelão, além de fita isolante para prender os fios.
 
 # Fotos e vídeo
 ![Captura de tela 2024-06-28 152427](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/b48b6213-b2db-4bb4-8922-e110c85e97d9)
@@ -16,7 +16,7 @@ Para o projeto, usamos unicamente jumpers e o arduíno (emprestado pelo professo
 
 
 ![Imagem do WhatsApp de 2024-06-27 à(s) 20 28 46_5ebbcad2](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/89168468-4477-4bbb-94bd-7698d7bc7360)
-*foto do projeto final* 
+*foto do teclado* 
 
 
 *aqui entra um vídeo*
