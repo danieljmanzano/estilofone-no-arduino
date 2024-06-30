@@ -1,4 +1,4 @@
-# Metalofone no Arduino
+# Estilofone no Arduino
 *segundo trabalho da disciplina Eletronica para Computação (SSC0180)*
 
 # Sobre o projeto
