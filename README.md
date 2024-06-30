@@ -25,30 +25,73 @@ https://github.com/danieljmanzano/estilofone-no-arduino/assets/162331747/422b1f6
 # Códigos
 - Código do arduino
 ```
-// Definição dos pinos dos sensores de toque
-const int touchPins[] = {52, 46, 40, 36, 32, 28, 22, 2, 5, 8, 11, 12}; // As posições dos pinos foram escolhidas de modo que os fios pudessem ficar mais espaçados
-// Definição dos pinos das notas musicais correspondentes
-const char teclas[] = {'u', '8', 'i', '9', 'o', 'p', 'a', 'z', 's', 'x', 'd', 'c'}; // Esses caracteres correspondem à oitava principal de um simulador de piano que usamos de base
-
+const char teclas[] = {'u', '8', 'i', '9', 'o', 'p', 'a', 'z', 's', 'x', 'd', 'c'};
+int j = 1;
+int arrayLeituraAntigo[12];
 
 void setup() {
-  // Configuração dos pinos dos sensores como entrada
-  for (int i = 0; i < 12; i++) {
-    pinMode(touchPins[i], INPUT);
-  }
-  
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(A4, INPUT);
+  pinMode(A5, INPUT);
+  pinMode(A6, INPUT);
+  pinMode(A7, INPUT);
+  pinMode(A8, INPUT);
+  pinMode(A9, INPUT);
+  pinMode(A10, INPUT);
+  pinMode(A11, INPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-  for (int i = 0; i < 12; i++) {
-    // Verificação se o sensor de toque foi ativado
-    if (digitalRead(touchPins[i]) == HIGH) {
-      // Tocar a nota correspondente
+  int leituraA0 = analogRead(A0);
+  //leituraA0 = map(leituraA0, 0, 1023, 0, 5);
+  int leituraA1 = analogRead(A1);
+  //leituraA1 = map(leituraA1, 0, 1023, 0, 5);
+  int leituraA2 = analogRead(A2);
+  //leituraA2 = map(leituraA2, 0, 1023, 0, 5);
+  int leituraA3 = analogRead(A3);
+  //leituraA3 = map(leituraA3, 0, 1023, 0, 5);
+  int leituraA4 = analogRead(A4);
+  //leituraA4 = map(leituraA4, 0, 1023, 0, 5);
+  int leituraA5 = analogRead(A5);
+  //leituraA5 = map(leituraA5, 0, 1023, 0, 5);
+  int leituraA6 = analogRead(A6);
+  //leituraA6 = map(leituraA6, 0, 1023, 0, 5);
+  int leituraA7 = analogRead(A7);
+  //leituraA7 = map(leituraA7, 0, 1023, 0, 5);
+  int leituraA8 = analogRead(A8);
+  //leituraA8 = map(leituraA8, 0, 1023, 0, 5);
+  int leituraA9 = analogRead(A9);
+  //leituraA9 = map(leituraA9, 0, 1023, 0, 5);
+  int leituraA10 = analogRead(A10);
+  //leituraA10 = map(leituraA10, 0, 1023, 0, 5);
+  int leituraA11 = analogRead(A11);
+  //leituraA11 = map(leituraA11, 0, 1023, 0, 5);
+  int arrayLeitura[] = {leituraA0, leituraA1, leituraA2, leituraA3, leituraA4, leituraA5, leituraA6, leituraA7, leituraA8, leituraA9, leituraA10, leituraA11};
+  if(j == 1) {
+    for(int i = 0; i < 12; i++){
+      arrayLeituraAntigo[i] = arrayLeitura[i];
+    }
+    j = 0;
+  }
+  for(int i = 0; i < 12; i++){
+    /*Serial.print("Tecla ");
+    Serial.println(i);
+    Serial.println(arrayLeitura[i]);*/
+    
+    if (arrayLeitura[i] > 1000 && arrayLeitura[i] > arrayLeituraAntigo[i]){
       Serial.print(teclas[i]);
-      delay(400);
     }
   }
+  if(j == 0) {
+    for(int i = 0; i < 12; i++){
+      arrayLeituraAntigo[i] = arrayLeitura[i];
+    }
+  }
+  delay(200);
 }
 ```
 - Programa que recebe os dados do arduino e simula as teclas do computador (feito em Python)
@@ -56,9 +99,9 @@ void loop() {
 import serial
 import keyboard
 
-serial_port = '/dev/ttyACM1' //detalhe: o código foi usado em linux, a entrada usada muda em windows
-baud_rate = 9600  
-
+serial_port = '/dev/ttyACM1'
+baud_rate = 9600
+t = 1
 ser = serial.Serial(serial_port, baud_rate)
 
 print(f"Conectando {serial_port}...")
@@ -67,16 +110,16 @@ try:
     while True:
         if ser.in_waiting > 0:
             char = ser.read().decode('utf-8')
-            print(f"lido: {char}")
             keyboard.write(char)
+            print(f"lido: {char}")
 except KeyboardInterrupt:
     print("\ncabo.")
 finally:
-    ser.close()
+    ser.close()
 ```
 
 # Agradecimentos
-Agradecemos ao professor Simões pelo auxílio que nos ofereceu ao dar ideias e soluções para problemas que enfrentamos no desenvolvimento do projeto, tornando o resultado final o melhor possível, e também pelo arduino. Além disso, também agradecemos ao colega Fernando Valentim Torres pela ajuda que nos ofertou, fazendo funcionar a transmissão de dados do arduino ao computador com o segundo código e apoiando o grupo.
+Agradecemos ao professor Simões pelo auxílio que nos ofereceu ao dar ideias e soluções para problemas que enfrentamos no desenvolvimento do projeto, tornando o resultado final o melhor possível. Além disso, também agradecemos ao colega Fernando Valentim Torres pela ajuda que nos ofertou, fazendo funcionar a transmissão de dados do arduino ao computador com o segundo código e apoiando o grupo.
 
 # Integrantes
 - Daniel Jorge Manzano - 154468661
