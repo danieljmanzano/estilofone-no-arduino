@@ -12,12 +12,13 @@ Para o projeto, usamos unicamente jumpers, uma protoboard, resistores de 3k ohm,
 
 # Fotos e vídeo
 ![Captura de tela 2024-06-28 152427](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/b48b6213-b2db-4bb4-8922-e110c85e97d9)
-- *observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a nota pressionada seria a primeira*
+- *imagem do tinkercad*
+- *observação: a entrada de 12 pinos representa os fios de entrada, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada de interesse; no caso da foto acima, a nota pressionada seria a primeira*
 
 ![Imagem do WhatsApp de 2024-06-30 à(s) 11 30 42_14e3eda5](https://github.com/danieljmanzano/estilofone-no-arduino/assets/162331747/ad2aef66-3a03-4b74-a2d9-79dbe753e7a6)
 - *imagem do projeto final*
 
-https://github.com/danieljmanzano/estilofone-no-arduino/assets/162331747/deb477d6-b274-44b0-be56-99f7f3fed6d3
+https://github.com/danieljmanzano/estilofone-no-arduino/assets/162331747/422b1f6b-7235-4e37-bb71-30dd99a4bfc2
 - *vídeo explicando brevemente o projeto*
 
 
