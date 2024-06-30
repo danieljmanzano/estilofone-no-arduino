@@ -15,8 +15,8 @@ Para o projeto, usamos unicamente jumpers, uma protoboard, resistores de 3k ohm,
 - *observação: a entrada de 12 pinos de que saem os fios representa as teclas, o fio da saída de 5V do arduíno é usado para transmitir a ddp para a respectiva entrada (tecla que liga, pelo fio, ao arduíno) de interesse; no caso da foto acima, a tecla pressionada seria a primeira*
 
 
-![Imagem do WhatsApp de 2024-06-27 à(s) 20 28 46_5ebbcad2](https://github.com/danieljmanzano/piano-no-arduino/assets/162331747/89168468-4477-4bbb-94bd-7698d7bc7360)
-- *foto do teclado* 
+![image](https://github.com/danieljmanzano/estilofone-no-arduino/assets/162331747/bda42187-e9a8-406c-a1e5-f1b863587bd2)
+- *um estilofone para referência*
 
 
 *aqui entra um vídeo*
